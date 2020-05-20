@@ -1,0 +1,3 @@
+collecting gradient statistics
+running dynamic evaluation
+perplexity loss: 49.08003

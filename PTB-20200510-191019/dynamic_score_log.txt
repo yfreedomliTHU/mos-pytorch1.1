@@ -1,0 +1,7 @@
+collecting gradient statistics
+running dynamic evaluation
+BLEU_1(Cumulative 1-gram): 0.631801
+BLEU_2(Cumulative 2-gram): 0.446346
+BLEU_3(Cumulative 3-gram): 0.295432
+BLEU_4(Cumulative 4-gram): 0.191108
+perplexity loss: 49.08003
