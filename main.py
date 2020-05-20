@@ -116,8 +116,10 @@ if torch.cuda.is_available():
 corpus = data.Corpus(args.data)
 
 eval_batch_size = 10
+test_batch_size = 1
 train_data = batchify(corpus.train, args.batch_size, args)
 val_data = batchify(corpus.valid, eval_batch_size, args)
+test_data = batchify(corpus.test, test_batch_size, args)
 
 ###############################################################################
 # Build the model
@@ -299,3 +301,14 @@ try:
 except KeyboardInterrupt:
     logging.info('-' * 89)
     logging.info('Exiting from training early')
+
+    # Load the best saved model.
+model = torch.load(os.path.join(args.save, 'model.pt'))
+parallel_model = nn.DataParallel(model, dim=1).cuda()
+
+# Run on test data.
+test_loss = evaluate(test_data, test_batch_size)
+logging('=' * 89)
+logging('| End of training | test loss {:5.2f} | test ppl {:8.2f}'.format(
+    test_loss, math.exp(test_loss)))
+logging('=' * 89)
