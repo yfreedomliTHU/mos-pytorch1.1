@@ -10,7 +10,7 @@ Implementation with PyTorch-1.1  for MoS:https://arxiv.org/pdf/1711.03953.pdf
 
 
 
-This is the code we used in our paper
+This code refered the paper
 >[Breaking the Softmax Bottleneck: A High-Rank RNN Language Model](https://arxiv.org/abs/1711.03953)
 
 >Zhilin Yang\*, Zihang Dai\*, Ruslan Salakhutdinov, William W. Cohen (*: equal contribution)
